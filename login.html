@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Park Smart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .show-password {
+      float: right;
+      margin-top: -40px;
+      margin-right: 10px;
+      cursor: pointer;
+      color: teal;
+      font-size: 14px;
+    }
+    .checkbox {
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .links a {
+      color: teal;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Log in</h2>
+    <form action="/login" method="POST">
+      <label>Username or Email</label>
+      <input type="text" name="email" required />
+      
+      <label>Password</label>
+      <input type="password" name="password" id="password" required />
+      <span class="show-password" onclick="togglePassword()">Show</span>
+
+      <div class="checkbox">
+        <input type="checkbox" name="remember" />
+        <label>Keep me logged in</label>
+      </div>
+      <button type="submit" class="btn">Log in</button>
+    </form>
+    <div class="links">
+      <a href="#">Forgot username?</a>
+      <a href="#">Forgot password?</a><br/>
+      <a href="#">Can't log in?</a><br/><br/>
+      Need a Park Smart account? <a href="signup.html">Create an account</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      var passwordInput = document.getElementById("password");
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    }
+  </script>
+</body>
+</html>

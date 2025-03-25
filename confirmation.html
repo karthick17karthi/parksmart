@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booking Confirmed - Park Smart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f6fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 500px;
+    }
+    .checkmark {
+      font-size: 60px;
+      color: #28a745;
+    }
+    h2 {
+      margin-top: 15px;
+    }
+    .details {
+      margin: 25px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .map-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="checkmark">✔️</div>
+    <h2>Booking Confirmed!</h2>
+    <div class="details">
+      <p><strong>Parking Slot:</strong> Bus Stand - Slot A3</p>
+      <p><strong>Vehicle Number:</strong> TN 69 AB 1234</p>
+      <p><strong>Email Confirmation Sent</strong></p>
+    </div>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=8.8050,78.1470" target="_blank">Navigate to Parking Spot</a>
+  </div>
+
+  <!-- Email sending logic (to be integrated with backend) -->
+  <script>
+    // This can be triggered from backend upon booking confirmation
+    // Example: Use Flask + SMTP or EmailJS integration
+  </script>
+</body>
+</html>

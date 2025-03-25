@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vehicle Details - Park Smart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    .next-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Vehicle & Personal Details</h2>
+
+    <form id="detailsForm" onsubmit="submitDetails(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="vehicle">Vehicle Number</label>
+      <input type="text" id="vehicle" placeholder="e.g., TN69 AB 1234" required />
+
+      <button type="submit" class="next-btn">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <script>
+    function submitDetails(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const vehicle = document.getElementById("vehicle").value;
+
+      // Store to session for confirmation or backend
+      sessionStorage.setItem("userName", name);
+      sessionStorage.setItem("userEmail", email);
+      sessionStorage.setItem("vehicleNumber", vehicle);
+
+      // Redirect to payment
+      window.location.href = "payment.html";
+    }
+  </script>
+</body>
+</html>

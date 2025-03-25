@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Park Smart - FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fbfc;
+      margin: 0;
+      padding: 40px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 16px 20px;
+      cursor: pointer;
+    }
+    .faq-question {
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+      font-size: 16px;
+    }
+    .rotate {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">1. How do I book a parking space?<span>▶</span></div>
+      <div class="faq-answer">Go to the booking page, choose your location, select an available slot, and proceed to payment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">2. Can I cancel my booking?<span>▶</span></div>
+      <div class="faq-answer">Yes, cancellations are allowed within 10 minutes of booking. Refunds may take 2-3 business days.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">3. Do I need an account to book?<span>▶</span></div>
+      <div class="faq-answer">Yes, you need to log in or sign up to complete your booking and receive confirmation via email.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">4. Is there a time limit for parking?<span>▶</span></div>
+      <div class="faq-answer">Yes, charges apply based on the time your vehicle remains in the parking spot. Overtime may incur additional charges.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">5. Can I use UPI or GPay for payments?<span>▶</span></div>
+      <div class="faq-answer">Absolutely! We support UPI, GPay, and all major online payment options for your convenience.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">6. How do I get directions after booking?<span>▶</span></div>
+      <div class="faq-answer">After booking, you’ll be shown a map with directions to your booked parking spot and confirmation email will be sent.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">7. Is my vehicle number stored securely?<span>▶</span></div>
+      <div class="faq-answer">Yes, your vehicle details are encrypted and stored securely in our system for booking and verification purposes only.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">8. What if all slots are full?<span>▶</span></div>
+      <div class="faq-answer">If no slots are available, the system will show alternate nearby parking spaces with real-time availability.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">9. Can I book in advance?<span>▶</span></div>
+      <div class="faq-answer">Yes, advance bookings are supported. Select the date and slot you'd like to reserve in advance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">10. What if I face issues during booking?<span>▶</span></div>
+      <div class="faq-answer">You can reach out to our support team from the “Help & Support” page or contact us directly through live chat.</div>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('span');
+        const isOpen = answer.style.display === 'block';
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        document.querySelectorAll('.faq-question span').forEach(i => i.classList.remove('rotate'));
+        if (!isOpen) {
+          answer.style.display = 'block';
+          icon.classList.add('rotate');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

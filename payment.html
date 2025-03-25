@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment - ParkSmart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h2 {
+            text-align: center;
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+        }
+        .submit-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">ParkSmart - Payment</div>
+
+    <div class="container">
+        <h2>Pay for Parking Spot</h2>
+
+        <div class="qr-code">
+            <p>Scan the QR Code to Pay via GPay/PhonePe</p>
+            <img src="static/images/gpay_qr.png" alt="GPay QR Code">
+        </div>
+
+        <form action="/payment_success" method="POST">
+            <!-- Hidden fields with booking data if needed -->
+            <button class="submit-btn" type="submit">I have Paid</button>
+        </form>
+    </div>
+</body>
+</html>

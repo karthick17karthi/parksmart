@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Smart - Navigation</title>
+    <!-- Include Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz_rmXSbIkfVdYclaWkBmcgQZDpetZ3s8 & callback=initMap" async defer></script>
+    <style>
+        /* Set the height of the map container */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Navigation to Booked Parking</h1>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <script>
+        let map;
+
+        function initMap() {
+            // Center the map on a specific location (e.g., Thoothukudi)
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 8.813, lng: 78.136 }, // Default coordinates (Thoothukudi)
+                zoom: 15,
+            });
+
+            // Example Parking Spot Markers from your database
+            {% for spot in parking_spots %}
+                new google.maps.Marker({
+                    position: { lat: {{ spot.latitude }}, lng: {{ spot.longitude }} },
+                    map: map,
+                    title: "{{ spot.name }}"
+                });
+            {% endfor %}
+        }
+    </script>
+
+</body>
+</html>

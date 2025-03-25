@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ParkSmart - Parking Status</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .slot {
+      background-color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .available {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .booked {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Parking Slot Status</h2>
+
+  <div class="slots">
+    <!-- Example slots - Replace with dynamic data -->
+    <div class="slot available">P1<br>🟢 Available</div>
+    <div class="slot booked">P2<br>🔴 Booked</div>
+    <div class="slot available">P3<br>🟢 Available</div>
+    <div class="slot booked">P4<br>🔴 Booked</div>
+    <div class="slot available">P5<br>🟢 Available</div>
+  </div>
+
+</body>
+</html>

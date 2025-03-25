@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatbot Assistant - ParkSmart</title>
+  <link rel="stylesheet" href="../static/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🤖 ParkSmart Assistant</h2>
+    <div class="chatbot-box">
+      <p><strong>User:</strong> Show me nearby parking</p>
+      <p><strong>Bot:</strong> Found 3 parking spots near Thoothukudi Bus Stand.</p>
+      <!-- Add actual integration here -->
+    </div>
+    
+    <button onclick="speak()">🎙️ Voice Assistant</button>
+    
+    <script>
+      function speak() {
+        const msg = new SpeechSynthesisUtterance("How can I assist you?");
+        window.speechSynthesis.speak(msg);
+      }
+    </script>
+  </div>
+</body>
+</html>

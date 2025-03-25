@@ -1,0 +1,9 @@
+Flask
+Flask-Mail
+Flask-SQLAlchemy
+opencv-python
+numpy
+requests
+geopy
+googlemaps
+flask-wtf

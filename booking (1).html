@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Parking - Park Smart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      padding: 40px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    select, .spot-btn {
+      padding: 12px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .spots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .spot-btn {
+      background-color: #dff0d8;
+      border: 1px solid #4CAF50;
+      cursor: pointer;
+    }
+    .spot-btn.booked {
+      background-color: #f8d7da;
+      border-color: #dc3545;
+      cursor: not-allowed;
+    }
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Book Your Parking Spot</h2>
+
+    <!-- Step 1: Choose Location -->
+    <label for="location">Select Parking Location:</label>
+    <select id="location" onchange="loadSpots()">
+      <option value="">-- Select --</option>
+      <option value="bus-stand">Bus Stand</option>
+      <option value="railway-parking">Railway Parking</option>
+      <option value="manis-parking">Manis Parking</option>
+      <option value="ai-parking">AI Parking</option>
+    </select>
+
+    <!-- Step 2: Select Spot -->
+    <div class="spots" id="spots-container">
+      <!-- Spots will load dynamically here -->
+    </div>
+
+    <!-- Step 3: Next -->
+    <button class="next-btn" onclick="goToDetails()">Continue</button>
+  </div>
+
+  <script>
+    const spotsData = {
+      "bus-stand": ["B1", "B2", "B3", "B4", "B5"],
+      "railway-parking": ["R1", "R2", "R3", "R4", "R5"],
+      "manis-parking": ["M1", "M2", "M3", "M4", "M5"],
+      "ai-parking": ["A1", "A2", "A3", "A4", "A5"]
+    };
+
+    const bookedSpots = ["B3", "R2", "A4"]; // Example of already booked slots
+
+    function loadSpots() {
+      const location = document.getElementById("location").value;
+      const container = document.getElementById("spots-container");
+      container.innerHTML = "";
+
+      if (spotsData[location]) {
+        spotsData[location].forEach(spot => {
+          const btn = document.createElement("button");
+          btn.className = "spot-btn";
+          btn.textContent = spot;
+
+          if (bookedSpots.includes(spot)) {
+            btn.classList.add("booked");
+            btn.disabled = true;
+          }
+
+          btn.onclick = function () {
+            document.querySelectorAll(".spot-btn").forEach(b => b.style.backgroundColor = "#dff0d8");
+            this.style.backgroundColor = "#90ee90"; // highlight selected
+            sessionStorage.setItem("selectedSpot", spot);
+            sessionStorage.setItem("selectedLocation", location);
+          };
+
+          container.appendChild(btn);
+        });
+      }
+    }
+
+    function goToDetails() {
+      const location = sessionStorage.getItem("selectedLocation");
+      const spot = sessionStorage.getItem("selectedSpot");
+
+      if (!location || !spot) {
+        alert("Please select a location and spot first.");
+        return;
+      }
+
+      // Redirect to next page (vehicle and payment details)
+      window.location.href = "vehicle_details.html";
+    }
+  </script>
+</body>
+</html>

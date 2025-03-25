@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Park Smart</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 360px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 24px;
+      color: #555;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .remember {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .remember input {
+      margin-right: 8px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .quick-access {
+      margin: 25px 0 15px;
+      color: #888;
+      font-size: 14px;
+    }
+    .social-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    .social-buttons a:hover {
+      background-color: #f0f0f0;
+    }
+    .login-link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .login-link a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Sign up</h2>
+    <p>Sign up to continue</p>
+
+    <form action="/signup" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+
+      <div class="remember">
+        <input type="checkbox" id="remember" name="remember" />
+        <label for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="btn">Sign up</button>
+    </form>
+
+    <div class="quick-access">ACCESS QUICKLY</div>
+    <div class="social-buttons">
+      <a href="https://accounts.google.com/signin" target="_blank">Google</a>
+      <a href="https://www.linkedin.com/login" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Sign in</a>
+    </div>
+  </div>
+
+</body>
+</html>
