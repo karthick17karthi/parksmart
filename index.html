@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Park Smart - Smart Parking System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+    header {
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      color: #1baf5d;
+      font-size: 28px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #1baf5d;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #1baf5d, #0e8052);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      background: #fff;
+      color: #1baf5d;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .hero a:hover {
+      background: #f4f4f4;
+    }
+
+    .section {
+      padding: 60px 80px;
+    }
+    .section h2 {
+      font-size: 32px;
+      color: #1baf5d;
+      margin-bottom: 20px;
+    }
+    .section p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.03);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .feature-card p {
+      color: #555;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 15px;
+      background: #eef9f0;
+      border-left: 5px solid #1baf5d;
+      border-radius: 8px;
+    }
+
+    .step-number {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1baf5d;
+      width: 40px;
+    }
+
+    .step-text {
+      font-size: 17px;
+      color: #444;
+    }
+
+    .get-started {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .get-started a {
+      background: #1baf5d;
+      color: #fff;
+      padding: 15px 35px;
+      font-size: 18px;
+      border-radius: 35px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .get-started a:hover {
+      background: #159c50;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 40px 20px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 10px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Park<span style="color:#000;">Smart</span></h1>
+    
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="booking.html">Booking</a>
+            <a href="chatbot.html">Chatbot</a>
+            <a href="navigation.html">Navigation</a>
+            <a href="live_feed.html">Live Feed</a> <!-- New -->
+            <a href="faq.html">FAQ</a>
+            <a href="admin_dashboard.html">Admin</a>
+            <a href="user_dashboard.html">User Dashboard</a> <!-- New -->
+            <a href="login.html">Login</a>
+          </nav>
+          
+    
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Smarter Parking Starts Here</h2>
+    <p>Find. Book. Park. Repeat. Discover available spots in real time across Thoothukudi!</p>
+    <a href="booking.html">Find Parking Now</a>
+  </section>
+
+  <!-- MOTIVE -->
+  <section class="section" id="motive">
+    <h2>Our Motive</h2>
+    <p>
+      Park Smart aims to make city parking efficient, effortless, and eco-friendly. Our goal is to reduce traffic congestion, lower fuel waste, and provide a seamless parking experience using AI-powered tools, real-time monitoring, and smart bookings.
+    </p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <h2>Features</h2>
+    <div class="features-list">
+      <div class="feature-card">
+        <h3>Live Slot Status</h3>
+        <p>Track real-time availability of parking spaces across city spots using camera sensors.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Instant Booking</h3>
+        <p>Reserve your slot in seconds with email confirmation and entry QR code.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Auto Vehicle Detection</h3>
+        <p>Detect vehicle number plates automatically at entry and exit using OpenCV.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Map Navigation</h3>
+        <p>Get real-time directions to your reserved spot through integrated Google Maps.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Payment Integration</h3>
+        <p>Pay securely via GPay scanner or QR code at the exit gate.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Chatbot + Voice Assistant</h3>
+        <p>Ask queries or get help via our AI-powered chatbot and voice assistant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-text">Open Park Smart and choose a parking location near you.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-text">Sign in, enter your car details, and book your slot.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-text">Follow Google Maps directions to your reserved parking space.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-text">Pay using GPay/QR on exit. Simple, secure and contactless!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <div class="get-started">
+    <a href="login.html">Get Started</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Park Smart. All rights reserved.
+  </footer>
+
+</body>
+</html>
